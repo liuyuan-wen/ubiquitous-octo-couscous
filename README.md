@@ -27,3 +27,9 @@
 </div>
 
 **Figure R3. Layer-wise Input Carry decoding accuracy for Attention vs. FFN outputs.** Evaluation settings remain as above. Probes were trained separately on the outputs of the Attention and FFN blocks at each layer. Attention modules exhibit stepwise jumps in accuracy (most notably at layers 5, 14, 21, and 24), indicating their primary role in routing and forming the carry signal. FFN representations largely follow these updates. The non-monotonic trajectory (e.g., the dip after layer 5) hints at a possible multi-phase computational mechanism.
+
+<div align="center">
+<img src="umap-Qwen3-30BA3B.png" width="600">
+</div>
+
+**Figure R7. UMAP projection in an MoE architecture (Qwen3-30B-A3B).** Evaluated during a scaled-up 3-operand, 14-digit addition task. Despite the architectural shift to a sparse MoE design and the increased complexity of 14-digit operands, the IRSTs remain preserved.
