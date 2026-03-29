@@ -1,4 +1,16 @@
 <div align="center">
+<img src="umap-ablation.png" width="1000">
+</div>
+
+**Figure R1. UMAP stability across varying hyperparameters and random seeds.** Projections of the identical residual stream activations using diverse configurations. The core geometric properties remain preserved.
+
+<div align="center">
+<img src="umap-ablation.png" width="1000">
+</div>
+
+**Figure R1. UMAP stability across varying hyperparameters and random seeds.** Projections of the identical residual stream activations using diverse configurations. The core geometric properties remain preserved.
+
+<div align="center">
 <img src="ID-barchart.png" width="600">
 </div>
 
