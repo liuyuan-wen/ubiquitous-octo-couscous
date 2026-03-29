@@ -15,3 +15,9 @@
 </div>
 
 **Figure R3. UMAP projection of representations during 3-digit × 3-digit multiplication.** Evaluated on Qwen3-4B at position $p=2$ in the last layer. A coarse digit-basin organization remains visible: representations are still arranged primarily by output digit identity, and most errors lie in transition regions between adjacent digit basins, with off-by-one confusions remaining dominant. At the same time, the finer fiber/trajectory structure is much less explicit than in addition, suggesting that any multiplication analogue of IRST may be more entangled and higher-dimensional, rather than a clean set of threads.
+
+<div align="center">
+<img src="Incarry-Attn-FFN.png" width="800">
+</div>
+
+**Figure R3. Layer-wise Input Carry decoding accuracy for Attention vs. FFN outputs.** Evaluation settings remain as above. Probes were trained separately on the outputs of the Attention and FFN blocks at each layer. Attention modules exhibit stepwise jumps in accuracy (most notably at layers 5, 14, 21, and 24), indicating their primary role in routing and forming the carry signal. FFN representations largely follow these updates. The non-monotonic trajectory (e.g., the dip after layer 5) hints at a possible multi-phase computational mechanism.
