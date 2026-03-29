@@ -5,10 +5,10 @@
 **Figure R1. UMAP stability across varying hyperparameters and random seeds.** Projections of the identical residual stream activations using diverse configurations. The core geometric properties remain preserved.
 
 <div align="center">
-<img src="umap-ablation.png" width="1000">
+<img src="vshape-ablation.png" width="1000">
 </div>
 
-**Figure R1. UMAP stability across varying hyperparameters and random seeds.** Projections of the identical residual stream activations using diverse configurations. The core geometric properties remain preserved.
+**Figure R1. Native-space cosine distance to anchor states across multiple trajectories.** Evaluated in the $R^{2560}$ representation space. The V-shaped correlation between native distance and continuous carry potential $\Phi$ generalizes across all trajectories, providing projection-independent validation of the IRSTs. The deviation observed in $\mathcal{T}_8$ and $\mathcal{T}_9$ corroborates our finding (Sec. 9) that digits 0 and 9 lack a contiguous geometric boundary in the latent space, which inherently precludes slippage between them.
 
 <div align="center">
 <img src="ID-barchart.png" width="600">
