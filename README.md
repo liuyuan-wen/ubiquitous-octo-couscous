@@ -11,6 +11,12 @@
 **Figure R2. Layer-wise evolution of intrinsic dimensionality.** Evaluated across the residual stream layers (corroborating App. K). Settings remain the same as above. We compare a specific sub-manifold $\mathcal{T}_5$ against the global union of all trajectories (All). The two remain broadly similar up to around layer 23. Between layers 23–31, $\mathcal{T}_5$ shows slightly lower nonlinear ID than the pooled set under MLE, whereas after layer 31 its nonlinear ID becomes modestly higher. One possible interpretation is that a shared coarse-grained scaffold forms earlier, while finer trajectory-specific local structure becomes more pronounced in later layers. This qualitative trend is also broadly consistent with App. K.
 
 <div align="center">
+<img src="IRST-degradation.png" width="1000">
+</div>
+
+**Figure R5. Impact of arithmetic complexity on manifold geometry.** UMAP projections during a simpler 3-operand, 5-digit addition task (Qwen3-4B). **Right ($p=4$)**: When carry propagation is minimal or highly skewed (lower complexity), representations collapse into tight, isolated digit basins. The continuous IRST connecting bridges are absent, and topological slippage (errors) is extremely rare. **Left ($p=3$)**: As active carry propagation introduces higher variance and complexity, the latent space expands to form the continuous IRSTs. This structural expansion creates boundary regions where "off-by-one" slippage errors (red markers) begin to systematically emerge.
+
+<div align="center">
 <img src="ID-layerwise.png" width="600">
 </div>
 
