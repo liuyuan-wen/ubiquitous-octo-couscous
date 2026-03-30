@@ -30,12 +30,6 @@
 **Figure R. Geometric signatures of carry-based vs. non-carry errors.** UMAP projection of the residual stream (same settings as Fig. 2) decoupling different error modes. Subscripts denote ground truth ($\text{gt}$) and probe-predicted ($p$) trajectories. Carry-based errors (green points, where the raw sum is correct but the token is wrong) systematically cluster at decision boundaries, reflecting the predicted continuous boundary slippage. Conversely, non-carry errors (red points, where the raw sum computation itself fails) exhibit a fundamentally distinct geometric signature, scattering chaotically across distant, non-adjacent digit basins rather than sliding along continuous trajectories.
 
 <div align="center">
-<img src="umap-error-decomposition.png" width="600">
-</div>
-
-**Figure R. Geometric signatures of carry-based vs. non-carry errors.** UMAP projection of the residual stream (same settings as Fig. 2) decoupling different error modes. Subscripts denote ground truth ($\text{gt}$) and probe-predicted ($p$) trajectories. Carry-based errors (green points, where the raw sum is correct but the token is wrong) systematically cluster at decision boundaries, reflecting the predicted continuous boundary slippage. Conversely, non-carry errors (red points, where the raw sum computation itself fails) exhibit a fundamentally distinct geometric signature, scattering chaotically across distant, non-adjacent digit basins rather than sliding along continuous trajectories.
-
-<div align="center">
 <img src="IRST-degradation.png" width="1000">
 </div>
 
@@ -83,4 +77,4 @@
 <img src="bathtub-other-positions.png" width="600">
 </div>
 
-**Figure R7. UMAP projection in an MoE architecture (Qwen3-30B-A3B).** Evaluated during a scaled-up 3-operand, 14-digit addition task. Despite the architectural shift to a sparse MoE design and the increased complexity of 14-digit operands, the IRSTs remain preserved.
+**Figure R7. Position-dependent bathtub curves (Qwen3-4B, 10-digit addition).** Intermediate positions ($p=1 \dots 8$) exhibit highly consistent periodic conditional error rates, suggesting uniform steady-state arithmetic logic with negligible cross-position variance. Boundary positions naturally deviate due to structural constraints, displaying a clear discrepancy from our Noisy Quantization Model. The frequency distribution shifts at boundaries simply reflect the coexistence of 10- and 11-digit sums in the dataset.
