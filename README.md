@@ -77,3 +77,10 @@
 </div>
 
 **Figure R7. UMAP projection in an MoE architecture (Qwen3-30B-A3B).** Evaluated during a scaled-up 3-operand, 14-digit addition task. Despite the architectural shift to a sparse MoE design and the increased complexity of 14-digit operands, the IRSTs remain preserved.
+
+<a id="experiment-result"></a>
+<div align="center">
+<img src="bathtub-other-positions.png" width="600">
+</div>
+
+**Figure R7. UMAP projection in an MoE architecture (Qwen3-30B-A3B).** Evaluated during a scaled-up 3-operand, 14-digit addition task. Despite the architectural shift to a sparse MoE design and the increased complexity of 14-digit operands, the IRSTs remain preserved.
