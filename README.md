@@ -18,16 +18,16 @@
 **Figure R1. Native-space intrinsic dimensionality across IRSTs.** Evaluated on Qwen3-4B ($p=4$) during the addition of three 10-digit integers. We report the Participation Ratio (linear effective dimension), TWO-NN, and Levina-Bickel MLE ($k=10$) for $\mathcal{T}_0 \dots \mathcal{T}_9$ and their union (All) in the 2560-D last layer residual stream, with error bars (obtained via 10 bootstrap iterations, with each trajectory downsampled to $500$ samples). Results show that trajectory-conditioned representations occupy stable low-dimensional subsets in native space. The pooled union (All) has a substantially larger linear effective dimension but a smaller local non-linear intrinsic dimension, indicating that linear and neighborhood-based estimators capture different geometric scales of the representation space.
 
 <div align="center">
-<img src="umap-error-decomposition.png" width="600">
-</div>
-
-**Figure R. Geometric signatures of carry-based vs. non-carry errors.** UMAP projection of the residual stream (same settings as Fig. 2) decoupling different error modes. Subscripts denote ground truth ($\text{gt}$) and probe-predicted ($p$) trajectories. Carry-based errors (green points, where the raw sum is correct but the token is wrong) systematically cluster at decision boundaries, reflecting the predicted continuous boundary slippage. Conversely, non-carry errors (red points, where the raw sum computation itself fails) exhibit a fundamentally distinct geometric signature, scattering chaotically across distant, non-adjacent digit basins rather than sliding along continuous trajectories.
-
-<div align="center">
 <img src="ID-layerwise.png" width="600">
 </div>
 
 **Figure R2. Layer-wise evolution of intrinsic dimensionality.** Evaluated across the residual stream layers (corroborating App. K). Settings remain the same as above. We compare a specific sub-manifold $\mathcal{T}_5$ against the global union of all trajectories (All). The two remain broadly similar up to around layer 23. Between layers 23–31, $\mathcal{T}_5$ shows slightly lower nonlinear ID than the pooled set under MLE, whereas after layer 31 its nonlinear ID becomes modestly higher. One possible interpretation is that a shared coarse-grained scaffold forms earlier, while finer trajectory-specific local structure becomes more pronounced in later layers. This qualitative trend is also broadly consistent with App. K.
+
+<div align="center">
+<img src="umap-error-decomposition.png" width="600">
+</div>
+
+**Figure R. Geometric signatures of carry-based vs. non-carry errors.** UMAP projection of the residual stream (same settings as Fig. 2) decoupling different error modes. Subscripts denote ground truth ($\text{gt}$) and probe-predicted ($p$) trajectories. Carry-based errors (green points, where the raw sum is correct but the token is wrong) systematically cluster at decision boundaries, reflecting the predicted continuous boundary slippage. Conversely, non-carry errors (red points, where the raw sum computation itself fails) exhibit a fundamentally distinct geometric signature, scattering chaotically across distant, non-adjacent digit basins rather than sliding along continuous trajectories.
 
 <div align="center">
 <img src="IRST-degradation.png" width="1000">
