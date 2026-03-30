@@ -15,13 +15,19 @@
 <img src="ID-barchart.png" width="600">
 </div>
 
-**Figure R1. Native-space intrinsic dimensionality across IRSTs.** Evaluated on Qwen3-4B ($p=4$) during the addition of three 10-digit integers. We report the Participation Ratio (linear effective dimension), TWO-NN, and Levina-Bickel MLE ($k=10$) for $\mathcal{T}_0 \dots \mathcal{T}_9$ and their union (All) in the 2560-D last layer residual stream, with error bars (obtained via 10 bootstrap iterations, with each trajectory downsampled to $500$ samples). Results show that trajectory-conditioned representations occupy stable low-dimensional subsets in native space. The pooled union (All) has a substantially larger linear effective dimension but a smaller local non-linear intrinsic dimension, indicating that linear and neighborhood-based estimators capture different geometric scales of the representation space.
+**Figure R1. Intrinsic dimensionality across IRSTs.** Evaluated on Qwen3-4B ($p=4$) during the addition of three 10-digit integers. We report the Participation Ratio (linear effective dimension), TWO-NN, and Levina-Bickel MLE ($k=10$) for $\mathcal{T}_0 \dots \mathcal{T}_9$ and their union (All) in the 2560-D last layer residual stream, with error bars (obtained via 10 bootstrap iterations, with each trajectory downsampled to $500$ samples). Results show that trajectory-conditioned representations occupy stable low-dimensional subsets in native space. The pooled union (All) has a substantially larger linear effective dimension but a smaller local non-linear intrinsic dimension, indicating that linear and neighborhood-based estimators capture different geometric scales of the representation space.
 
 <div align="center">
 <img src="ID-layerwise.png" width="600">
 </div>
 
 **Figure R2. Layer-wise evolution of intrinsic dimensionality.** Evaluated across the residual stream layers (corroborating App. K). Settings remain the same as above. We compare a specific sub-manifold $\mathcal{T}_5$ against the global union of all trajectories (All). The two remain broadly similar up to around layer 23. Between layers 23–31, $\mathcal{T}_5$ shows slightly lower nonlinear ID than the pooled set under MLE, whereas after layer 31 its nonlinear ID becomes modestly higher. One possible interpretation is that a shared coarse-grained scaffold forms earlier, while finer trajectory-specific local structure becomes more pronounced in later layers. This qualitative trend is also broadly consistent with App. K.
+
+<div align="center">
+<img src="umap-error-decomposition.png" width="600">
+</div>
+
+**Figure R. Geometric signatures of carry-based vs. non-carry errors.** UMAP projection of the residual stream (same settings as Fig. 2) decoupling different error modes. Subscripts denote ground truth ($\text{gt}$) and probe-predicted ($p$) trajectories. Carry-based errors (green points, where the raw sum is correct but the token is wrong) systematically cluster at decision boundaries, reflecting the predicted continuous boundary slippage. Conversely, non-carry errors (red points, where the raw sum computation itself fails) exhibit a fundamentally distinct geometric signature, scattering chaotically across distant, non-adjacent digit basins rather than sliding along continuous trajectories.
 
 <div align="center">
 <img src="umap-error-decomposition.png" width="600">
@@ -46,6 +52,18 @@
 </div>
 
 **Figure R3. Layer-wise Input Carry decoding accuracy for Attention vs. FFN outputs.** Evaluation settings remain as above. Probes were trained separately on the outputs of the Attention and FFN blocks at each layer. Attention modules exhibit stepwise jumps in accuracy (most notably at layers 5, 14, 21, and 24), indicating their primary role in routing and forming the carry signal. FFN representations largely follow these updates. The non-monotonic trajectory (e.g., the dip after layer 5) hints at a possible multi-phase computational mechanism.
+
+<div align="center">
+<img src="umap-quanta.png" width="1000">
+</div>
+
+**Figure R7. UMAP projections of the residual stream from single-task addition models (Quirke et al., 2024).** **Left (quanta_add_d20, under-converged):** The model exhibits continuous representations. Similar with general LLMs, errors (red) are predominantly off-by-one geometic slippages at the boundaries between adjacent digit basins. Note that the anchor states occasionally fall outside the main basins (e.g., digit 6); we hypothesize this is viable because the model's ultra-small 14-token vocabulary allows for high spatial tolerance without confusing unembedding outputs. **Right (quanta_add_d10, fully converged, 100% accuracy):** Driven by its single-task nature, the model successfully separates the representations into perfectly isolated digit basins. The continuous fibers vanish, replaced by discrete intra-basin carry clusters (0/1), eliminating possibility slippage.
+
+<div align="center">
+<img src="bathtub-quanta.png" width="800">
+</div>
+
+**Figure R7. Conditional error rate (bathtub curves) for the under-converged single-task model (quanta_add_d20).** Evaluated on 10-digit (top) and 15-digit (bottom) addition tasks. Despite being a distinctly trained, small-scale specialized model, its continuous-representation errors still follow the periodic bathtub distribution predicted by our Noisy Quantization Model.
 
 <div align="center">
 <img src="bathtub-truncation.png" width="800">
