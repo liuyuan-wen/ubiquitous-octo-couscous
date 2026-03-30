@@ -41,6 +41,12 @@
 **Figure R3. Layer-wise Input Carry decoding accuracy for Attention vs. FFN outputs.** Evaluation settings remain as above. Probes were trained separately on the outputs of the Attention and FFN blocks at each layer. Attention modules exhibit stepwise jumps in accuracy (most notably at layers 5, 14, 21, and 24), indicating their primary role in routing and forming the carry signal. FFN representations largely follow these updates. The non-monotonic trajectory (e.g., the dip after layer 5) hints at a possible multi-phase computational mechanism.
 
 <div align="center">
+<img src="bathtub-truncation.png" width="800">
+</div>
+
+**Figure R7. Sanity check under alternative $\Phi$ constructions.** We re-evaluate the conditional error rate (main text Fig. 5) by truncating the ground-truth Carry Potential to a look-ahead window of $K$ rightward columns. **Top ($K=1$)**: Extreme truncation reduces the $R^2$, as the potential becomes overly discretized, losing its continuous nature. **Bottom ($K=2$)**: Incorporating just two rightward digits restores the fine-grained continuous distribution. The periodic bathtub curve and high $R^2$ perfectly recover.
+
+<div align="center">
 <img src="umap-Qwen3-30BA3B.png" width="600">
 </div>
 
