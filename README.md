@@ -1,4 +1,4 @@
-<a id="experiment-result"></a>
+
 <div align="center">
 <img src="umap-ablation.png" width="1000">
 </div>
@@ -47,6 +47,7 @@
 
 **Figure R7. Sanity check under alternative $\Phi$ constructions.** We re-evaluate the conditional error rate (main text Fig. 5) by truncating the ground-truth Carry Potential to a look-ahead window of $K$ rightward columns. **Top ($K=1$)**: Extreme truncation reduces the $R^2$, as the potential becomes overly discretized, losing its continuous nature. **Bottom ($K=2$)**: Incorporating just two rightward digits restores the fine-grained continuous distribution. The periodic bathtub curve and high $R^2$ perfectly recover.
 
+<a id="experiment-result"></a>
 <div align="center">
 <img src="umap-Qwen3-30BA3B.png" width="600">
 </div>
