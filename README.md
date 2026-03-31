@@ -1,4 +1,39 @@
 
+<a id="top"></a>
+
+# The Figures for Rebuttal of ICML Submission 7050.
+
+**Quick Navigation**
+
+[Figure R1: UMAP Stability Across Varying Hyperparameters and Random Seeds](#figure-r1)
+
+[Figure R2: Native-Space Cosine Distance to Anchor States](#figure-r2)
+
+[Figure R3: Intrinsic Dimensionality Across IRSTs](#figure-r3)
+
+[Figure R4: Layer-Wise Evolution of Intrinsic Dimensionality](#figure-r4)
+
+[Figure R5: Carry-Based vs. Non-Carry Errors](#figure-r5)
+
+[Figure R6: Arithmetic Complexity and Manifold Geometry](#figure-r6)
+
+[Figure R7: UMAP Projection for Multiplication](#figure-r7)
+
+[Figure R8: Input Carry Decoding Accuracy for Attention vs. FFN](#figure-r8)
+
+[Figure R9: UMAP Projections from Single-Task Addition Models](#figure-r9)
+
+[Figure R10: Conditional Error Rate for the Under-Converged Single-Task Model](#figure-r10)
+
+[Figure R11: Sanity Check Under Alternative Phi Constructions](#figure-r11)
+
+[Figure R12: UMAP Projection in an MoE Architecture](#figure-r12)
+
+[Figure R13: Position-Dependent Bathtub Curves](#figure-r13)
+
+---
+
+<a id="figure-r1"></a>
 <div align="center">
 <img src="umap-ablation.png" width="1000">
 </div>
@@ -7,6 +42,7 @@
 
 ---
 
+<a id="figure-r2"></a>
 <div align="center">
 <img src="vshape-ablation.png" width="1000">
 </div>
@@ -15,6 +51,7 @@
 
 ---
 
+<a id="figure-r3"></a>
 <div align="center">
 <img src="ID-barchart.png" width="600">
 </div>
@@ -23,6 +60,7 @@
 
 ---
 
+<a id="figure-r4"></a>
 <div align="center">
 <img src="ID-layerwise.png" width="600">
 </div>
@@ -31,6 +69,7 @@
 
 ---
 
+<a id="figure-r5"></a>
 <div align="center">
 <img src="umap-error-decomposition.png" width="600">
 </div>
@@ -39,6 +78,7 @@
 
 ---
 
+<a id="figure-r6"></a>
 <div align="center">
 <img src="IRST-degradation.png" width="1000">
 </div>
@@ -47,6 +87,7 @@
 
 ---
 
+<a id="figure-r7"></a>
 <div align="center">
 <img src="umap-multiplication.png" width="600">
 </div>
@@ -55,6 +96,7 @@
 
 ---
 
+<a id="figure-r8"></a>
 <div align="center">
 <img src="Incarry-Attn-FFN.png" width="800">
 </div>
@@ -63,6 +105,7 @@
 
 ---
 
+<a id="figure-r9"></a>
 <div align="center">
 <img src="umap-quanta.png" width="1000">
 </div>
@@ -71,6 +114,7 @@
 
 ---
 
+<a id="figure-r10"></a>
 <div align="center">
 <img src="bathtub-quanta.png" width="800">
 </div>
@@ -79,6 +123,7 @@
 
 ---
 
+<a id="figure-r11"></a>
 <div align="center">
 <img src="bathtub-truncation.png" width="800">
 </div>
@@ -87,16 +132,16 @@
 
 ---
 
-<a id="experiment-result"></a>
+<a id="figure-r12"></a>
 <div align="center">
 <img src="umap-Qwen3-30BA3B.png" width="600">
 </div>
 
-**Figure R12. UMAP projection in an MoE architecture (Qwen3-30B-A3B).** Evaluated during a scaled-up 3-operand, 14-digit addition task. Despite the architectural shift to a sparse MoE design and the increased complexity of 14-digit operands, the IRSTs remain preserved.
+**Figure R12. UMAP projection in an MoE architecture (Qwen3-30B-A3B).** Evaluated during a scaled-up 4-operand, 14-digit addition task. Despite the architectural shift to a sparse MoE design and the increased complexity of 14-digit operands, the IRSTs remain preserved.
 
 ---
 
-<a id="experiment-result"></a>
+<a id="figure-r13"></a>
 <div align="center">
 <img src="bathtub-other-positions.png" width="600">
 </div>
