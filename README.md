@@ -56,7 +56,7 @@
 <img src="ID-barchart.png" width="600">
 </div>
 
-**Figure R3. Intrinsic dimensionality across IRSTs.** Evaluated on Qwen3-4B ( $p=4$ ) during the addition of three 10-digit integers. We report the Participation Ratio (linear effective dimension), TWO-NN, and Levina-Bickel MLE ($k=10$) for $\mathcal{T}_0 \dots \mathcal{T}_9$ and their union (All) in the 2560-D last layer residual stream, with error bars (obtained via 10 bootstrap iterations, with each trajectory downsampled to $500$ samples). Results show that trajectory-conditioned representations occupy stable low-dimensional subsets in native space. The pooled union (All) has a substantially larger linear effective dimension but a smaller local non-linear intrinsic dimension, indicating that linear and neighborhood-based estimators capture different geometric scales of the representation space.
+**Figure R3. Intrinsic dimensionality across IRSTs.** Evaluated on Qwen3-4B ( $p=4$ ) during the addition of three 10-digit integers. We report the Participation Ratio (linear effective dimension), TWO-NN, and Levina-Bickel MLE ( $k=10$ ) for $\mathcal{T}_0 \dots \mathcal{T}_9$ and their union (All) in the 2560-D last layer residual stream, with error bars (obtained via 10 bootstrap iterations, with each trajectory downsampled to $500$ samples). Results show that trajectory-conditioned representations occupy stable low-dimensional subsets in native space. The pooled union (All) has a substantially larger linear effective dimension but a smaller local non-linear intrinsic dimension, indicating that linear and neighborhood-based estimators capture different geometric scales of the representation space.
 
 ---
 
@@ -74,7 +74,7 @@
 <img src="umap-error-decomposition.png" width="600">
 </div>
 
-**Figure R5. Geometric signatures of carry-based vs. non-carry errors.** UMAP projection of the residual stream (same settings as Fig. 2) decoupling different error modes. Subscripts denote ground truth ($\text{gt}$) and probe-predicted ($p$) trajectories. Carry-based errors (green points, where the raw sum is correct but the token is wrong) systematically cluster at decision boundaries, reflecting the predicted continuous boundary slippage. Conversely, non-carry errors (red points, where the raw sum computation itself fails) exhibit a fundamentally distinct geometric signature, scattering chaotically across distant, non-adjacent digit basins rather than sliding along continuous trajectories.
+**Figure R5. Geometric signatures of carry-based vs. non-carry errors.** UMAP projection of the residual stream (same settings as Fig. 2) decoupling different error modes. Subscripts denote ground truth ( $\text{gt}$ ) and probe-predicted ( $p$ ) trajectories. Carry-based errors (green points, where the raw sum is correct but the token is wrong) systematically cluster at decision boundaries, reflecting the predicted continuous boundary slippage. Conversely, non-carry errors (red points, where the raw sum computation itself fails) exhibit a fundamentally distinct geometric signature, scattering chaotically across distant, non-adjacent digit basins rather than sliding along continuous trajectories.
 
 ---
 
@@ -83,7 +83,7 @@
 <img src="IRST-degradation.png" width="1000">
 </div>
 
-**Figure R6. Impact of arithmetic complexity on manifold geometry.** UMAP projections during a simpler 3-operand, 5-digit addition task (Qwen3-4B). **Right ($p=4$)**: When carry propagation is minimal or highly skewed (lower complexity), representations collapse into tight, isolated digit basins. The continuous IRST connecting bridges are absent, and topological slippage (errors) is extremely rare. **Left ($p=3$)**: As active carry propagation introduces higher variance and complexity, the latent space expands to form the continuous IRSTs. This structural expansion creates boundary regions where "off-by-one" slippage errors (red markers) begin to systematically emerge.
+**Figure R6. Impact of arithmetic complexity on manifold geometry.** UMAP projections during a simpler 3-operand, 5-digit addition task (Qwen3-4B). **Right ( $p=4$ )**: When carry propagation is minimal or highly skewed (lower complexity), representations collapse into tight, isolated digit basins. The continuous IRST connecting bridges are absent, and topological slippage (errors) is extremely rare. **Left ( $p=3$ )**: As active carry propagation introduces higher variance and complexity, the latent space expands to form the continuous IRSTs. This structural expansion creates boundary regions where "off-by-one" slippage errors (red markers) begin to systematically emerge.
 
 ---
 
@@ -128,7 +128,7 @@
 <img src="bathtub-truncation.png" width="800">
 </div>
 
-**Figure R11. Sanity check under alternative $\Phi$ constructions.** We re-evaluate the conditional error rate (main text Fig. 5) by truncating the ground-truth Carry Potential to a look-ahead window of $K$ rightward columns. **Top ($K=1$)**: Extreme truncation reduces the $R^2$, as the potential becomes overly discretized, losing its continuous nature. **Bottom ($K=2$)**: Incorporating just two rightward digits restores the fine-grained continuous distribution. The periodic bathtub curve and high $R^2$ perfectly recover.
+**Figure R11. Sanity check under alternative $\Phi$ constructions.** We re-evaluate the conditional error rate (main text Fig. 5) by truncating the ground-truth Carry Potential to a look-ahead window of $K$ rightward columns. **Top ( $K=1$ )**: Extreme truncation reduces the $R^2$, as the potential becomes overly discretized, losing its continuous nature. **Bottom ( $K=2$ )**: Incorporating just two rightward digits restores the fine-grained continuous distribution. The periodic bathtub curve and high $R^2$ perfectly recover.
 
 ---
 
@@ -146,6 +146,6 @@
 <img src="bathtub-other-positions.png" width="600">
 </div>
 
-**Figure R13. Position-dependent bathtub curves (Qwen3-4B, 10-digit addition).** Intermediate positions ($p=1 \dots 8$) exhibit highly consistent periodic conditional error rates, suggesting uniform steady-state arithmetic logic with negligible cross-position variance. Boundary positions naturally deviate due to structural constraints, displaying a clear discrepancy from our Noisy Quantization Model. The frequency distribution shifts at boundaries simply reflect the coexistence of 10- and 11-digit sums in the dataset.
+**Figure R13. Position-dependent bathtub curves (Qwen3-4B, 10-digit addition).** Intermediate positions ( $p=1 \dots 8$ ) exhibit highly consistent periodic conditional error rates, suggesting uniform steady-state arithmetic logic with negligible cross-position variance. Boundary positions naturally deviate due to structural constraints, displaying a clear discrepancy from our Noisy Quantization Model. The frequency distribution shifts at boundaries simply reflect the coexistence of 10- and 11-digit sums in the dataset.
 
 ---
