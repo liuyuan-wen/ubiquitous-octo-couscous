@@ -5,11 +5,15 @@
 
 **Figure R1. UMAP stability across varying hyperparameters and random seeds.** Projections of the identical residual stream activations using diverse configurations. The core geometric properties remain preserved.
 
+---
+
 <div align="center">
 <img src="vshape-ablation.png" width="1000">
 </div>
 
 **Figure R2. Native-space cosine distance to anchor states across multiple trajectories.** Evaluated in the $R^{2560}$ representation space. The V-shaped correlation between native distance and continuous carry potential $\Phi$ generalizes across all trajectories, providing projection-independent validation of the IRSTs. The deviation observed in $\mathcal{T}_8$ and $\mathcal{T}_9$ corroborates our finding (Sec. 9) that digits 0 and 9 lack a contiguous geometric boundary in the latent space, which inherently precludes slippage between them.
+
+---
 
 <div align="center">
 <img src="ID-barchart.png" width="600">
@@ -17,11 +21,15 @@
 
 **Figure R3. Intrinsic dimensionality across IRSTs.** Evaluated on Qwen3-4B ($p=4$) during the addition of three 10-digit integers. We report the Participation Ratio (linear effective dimension), TWO-NN, and Levina-Bickel MLE ($k=10$) for $\mathcal{T}_0 \dots \mathcal{T}_9$ and their union (All) in the 2560-D last layer residual stream, with error bars (obtained via 10 bootstrap iterations, with each trajectory downsampled to $500$ samples). Results show that trajectory-conditioned representations occupy stable low-dimensional subsets in native space. The pooled union (All) has a substantially larger linear effective dimension but a smaller local non-linear intrinsic dimension, indicating that linear and neighborhood-based estimators capture different geometric scales of the representation space.
 
+---
+
 <div align="center">
 <img src="ID-layerwise.png" width="600">
 </div>
 
 **Figure R4. Layer-wise evolution of intrinsic dimensionality.** Evaluated across the residual stream layers (corroborating App. K). Settings remain the same as above. We compare a specific sub-manifold $\mathcal{T}_5$ against the global union of all trajectories (All). The two remain broadly similar up to around layer 23. Between layers 23–31, $\mathcal{T}_5$ shows slightly lower nonlinear ID than the pooled set under MLE, whereas after layer 31 its nonlinear ID becomes modestly higher. One possible interpretation is that a shared coarse-grained scaffold forms earlier, while finer trajectory-specific local structure becomes more pronounced in later layers. This qualitative trend is also broadly consistent with App. K.
+
+---
 
 <div align="center">
 <img src="umap-error-decomposition.png" width="600">
@@ -29,11 +37,15 @@
 
 **Figure R5. Geometric signatures of carry-based vs. non-carry errors.** UMAP projection of the residual stream (same settings as Fig. 2) decoupling different error modes. Subscripts denote ground truth ($\text{gt}$) and probe-predicted ($p$) trajectories. Carry-based errors (green points, where the raw sum is correct but the token is wrong) systematically cluster at decision boundaries, reflecting the predicted continuous boundary slippage. Conversely, non-carry errors (red points, where the raw sum computation itself fails) exhibit a fundamentally distinct geometric signature, scattering chaotically across distant, non-adjacent digit basins rather than sliding along continuous trajectories.
 
+---
+
 <div align="center">
 <img src="IRST-degradation.png" width="1000">
 </div>
 
 **Figure R6. Impact of arithmetic complexity on manifold geometry.** UMAP projections during a simpler 3-operand, 5-digit addition task (Qwen3-4B). **Right ($p=4$)**: When carry propagation is minimal or highly skewed (lower complexity), representations collapse into tight, isolated digit basins. The continuous IRST connecting bridges are absent, and topological slippage (errors) is extremely rare. **Left ($p=3$)**: As active carry propagation introduces higher variance and complexity, the latent space expands to form the continuous IRSTs. This structural expansion creates boundary regions where "off-by-one" slippage errors (red markers) begin to systematically emerge.
+
+---
 
 <div align="center">
 <img src="umap-multiplication.png" width="600">
@@ -41,11 +53,15 @@
 
 **Figure R7. UMAP projection of representations during 3-digit × 3-digit multiplication.** Evaluated on Qwen3-4B at position $p=2$ in the last layer. A coarse digit-basin organization remains visible: representations are still arranged primarily by output digit identity, and most errors lie in transition regions between adjacent digit basins, with off-by-one confusions remaining dominant. At the same time, the finer fiber/trajectory structure is much less explicit than in addition, suggesting that any multiplication analogue of IRST may be more entangled and higher-dimensional, rather than a clean set of threads.
 
+---
+
 <div align="center">
 <img src="Incarry-Attn-FFN.png" width="800">
 </div>
 
 **Figure R8. Layer-wise Input Carry decoding accuracy for Attention vs. FFN outputs.** Evaluation settings remain as above. Probes were trained separately on the outputs of the Attention and FFN blocks at each layer. Attention modules exhibit stepwise jumps in accuracy (most notably at layers 5, 14, 21, and 24), indicating their primary role in routing and forming the carry signal. FFN representations largely follow these updates. The non-monotonic trajectory (e.g., the dip after layer 5) hints at a possible multi-phase computational mechanism.
+
+---
 
 <div align="center">
 <img src="umap-quanta.png" width="1000">
@@ -53,17 +69,23 @@
 
 **Figure R9. UMAP projections of the residual stream from single-task addition models (Quirke et al., 2024).** **Left (quanta_add_d20, under-converged):** The model exhibits continuous representations. Similar with general LLMs, errors (red) are predominantly off-by-one geometic slippages at the boundaries between adjacent digit basins. Note that the anchor states occasionally fall outside the main basins (e.g., digit 6); we hypothesize this is viable because the model's ultra-small 14-token vocabulary allows for high spatial tolerance without confusing unembedding outputs. **Right (quanta_add_d10, fully converged, 100% accuracy):** Driven by its single-task nature, the model successfully separates the representations into perfectly isolated digit basins. The continuous fibers vanish, replaced by discrete intra-basin carry clusters (0/1), eliminating possibility slippage.
 
+---
+
 <div align="center">
 <img src="bathtub-quanta.png" width="800">
 </div>
 
 **Figure R10. Conditional error rate (bathtub curves) for the under-converged single-task model (quanta_add_d20).** Evaluated on 10-digit (top) and 15-digit (bottom) addition tasks. Despite being a distinctly trained, small-scale specialized model, its continuous-representation errors still follow the periodic bathtub distribution predicted by our Noisy Quantization Model.
 
+---
+
 <div align="center">
 <img src="bathtub-truncation.png" width="800">
 </div>
 
 **Figure R11. Sanity check under alternative $\Phi$ constructions.** We re-evaluate the conditional error rate (main text Fig. 5) by truncating the ground-truth Carry Potential to a look-ahead window of $K$ rightward columns. **Top ($K=1$)**: Extreme truncation reduces the $R^2$, as the potential becomes overly discretized, losing its continuous nature. **Bottom ($K=2$)**: Incorporating just two rightward digits restores the fine-grained continuous distribution. The periodic bathtub curve and high $R^2$ perfectly recover.
+
+---
 
 <a id="experiment-result"></a>
 <div align="center">
@@ -72,9 +94,13 @@
 
 **Figure R12. UMAP projection in an MoE architecture (Qwen3-30B-A3B).** Evaluated during a scaled-up 3-operand, 14-digit addition task. Despite the architectural shift to a sparse MoE design and the increased complexity of 14-digit operands, the IRSTs remain preserved.
 
+---
+
 <a id="experiment-result"></a>
 <div align="center">
 <img src="bathtub-other-positions.png" width="600">
 </div>
 
 **Figure R13. Position-dependent bathtub curves (Qwen3-4B, 10-digit addition).** Intermediate positions ($p=1 \dots 8$) exhibit highly consistent periodic conditional error rates, suggesting uniform steady-state arithmetic logic with negligible cross-position variance. Boundary positions naturally deviate due to structural constraints, displaying a clear discrepancy from our Noisy Quantization Model. The frequency distribution shifts at boundaries simply reflect the coexistence of 10- and 11-digit sums in the dataset.
+
+---
